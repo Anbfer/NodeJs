@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import Titulo from '@/components/Titulo'
 import CardFilme from '@/components/CardFilme'
 import SecaoFilmes from '@/components/SecaoFilmes'
-
+import MovieCreationIcon from '@mui/icons-material/MovieCreation';
 
 /*Base de dados para os filmes https://www.themoviedb.org/?language=pt*/
 
@@ -26,12 +26,26 @@ export default function Home() {
   ]
 
   return (
-    <main className={`flex min-h-screen flex-col justify-between p-24 ${inter.className}`}/*Classes do TailWind*/>
-      <Titulo>Filmes em Alta</Titulo>
-        <SecaoFilmes filmes={filmes} />
-      <Titulo>Séries em Alta</Titulo>
-      <Titulo>Lançamentos</Titulo>
-      <Titulo>Melhores do Mês</Titulo>
-    </main> //JSX Parece HTML mas não é
+    <>
+      <header>
+        <div>
+          <MovieCreationIcon/>
+          <h1>Senac Filmes</h1>
+        </div>
+        <h1>Sobre</h1>
+        <div>
+          <img className='h-72 w-screen object-cover' src='https://www.themoviedb.org/t/p/original/fgw4rFs4XMWdJTWp1eMacHKQqbZ.jpg' />
+        </div>
+      </header>
+      <main className={`flex min-h-screen flex-col justify-between p-24 ${inter.className}`}/*Classes do TailWind*/>
+        <Titulo>Filmes em Alta</Titulo>
+        <div className='flex'>
+          <SecaoFilmes filmes={filmes} />
+        </div>
+        <Titulo>Séries em Alta</Titulo>
+        <Titulo>Lançamentos</Titulo>
+        <Titulo>Melhores do Mês</Titulo>
+      </main> //JSX Parece HTML mas não é
+    </>
   )
 }
