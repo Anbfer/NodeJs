@@ -4,6 +4,7 @@ import Titulo from '@/components/Titulo'
 import CardFilme from '@/components/CardFilme'
 import SecaoFilmes from '@/components/SecaoFilmes'
 
+
 /*Base de dados para os filmes https://www.themoviedb.org/?language=pt*/
 
 const inter = Inter({ subsets: ['latin'] })
