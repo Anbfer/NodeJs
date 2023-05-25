@@ -28,11 +28,11 @@ export default function Home() {
   return (
     <>
       <header>
-        <div>
-          <MovieCreationIcon/>
+        <div className='flex justify-between'>
+          <MovieCreationIcon />
           <h1>Senac Filmes</h1>
+          <h1>Sobre</h1>
         </div>
-        <h1>Sobre</h1>
         <div>
           <img className='h-72 w-screen object-cover' src='https://www.themoviedb.org/t/p/original/fgw4rFs4XMWdJTWp1eMacHKQqbZ.jpg' />
         </div>
