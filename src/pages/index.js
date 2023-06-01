@@ -1,51 +1,57 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import Titulo from '@/components/Titulo'
-import CardFilme from '@/components/CardFilme'
-import SecaoFilmes from '@/components/SecaoFilmes'
-import MovieCreationIcon from '@mui/icons-material/MovieCreation';
-
-/*Base de dados para os filmes https://www.themoviedb.org/?language=pt*/
-
-const inter = Inter({ subsets: ['latin'] })
+import CardFilme from "@/components/CardFilme";
+import Header from "@/components/Header";
+import SecaoFilmes from "@/components/SecaoFilmes";
+import Titulo from "@/components/Titulo";
 
 export default function Home() {
+
   const filmes = [
     {
-      titulo: "Super Mario Bros.: O Filme",
-      nota: "9.0",
-      descricao: "O melhor filme de Video Game da história",
-      poster: "https://www.themoviedb.org/t/p/original/wF8LNx3YymMhkHRE73wtJKuX4ii.jpg"
+      titulo: "Super mario",
+      nota: "8.9",
+      poster: "https://www.themoviedb.org/t/p/w220_and_h330_face/kzYbNJ4JaQiRny0cDi8a6bNX5w3.jpg"
     },
     {
-      titulo: "A Mãe",
-      nota: "6.0",
-      descricao: "Um filme mediano",
-      poster: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/nJpwHsC5bo5NEkx5gULWA9hAZin.jpg"
+      titulo: "Super mario",
+      nota: "8.9",
+      poster: "https://www.themoviedb.org/t/p/w220_and_h330_face/kzYbNJ4JaQiRny0cDi8a6bNX5w3.jpg"
+    },
+    {
+      titulo: "Super mario",
+      nota: "8.9",
+      poster: "https://www.themoviedb.org/t/p/w220_and_h330_face/kzYbNJ4JaQiRny0cDi8a6bNX5w3.jpg"
+    },
+    {
+      titulo: "Super mario",
+      nota: "8.9",
+      poster: "https://www.themoviedb.org/t/p/w220_and_h330_face/kzYbNJ4JaQiRny0cDi8a6bNX5w3.jpg"
+    },
+    {
+      titulo: "A mãe",
+      nota: "6.7",
+      poster: "https://www.themoviedb.org/t/p/w220_and_h330_face/5OeWHBMifiRPMz6eS23miS5ttED.jpg"
     }
   ]
 
   return (
-    <>
-      <header>
-        <div className='flex justify-between'>
-          <MovieCreationIcon />
-          <h1>Senac Filmes</h1>
-          <h1>Sobre</h1>
-        </div>
-        <div>
-          <img className='h-72 w-screen object-cover' src='https://www.themoviedb.org/t/p/original/fgw4rFs4XMWdJTWp1eMacHKQqbZ.jpg' />
-        </div>
-      </header>
-      <main className={`flex min-h-screen flex-col justify-between p-24 ${inter.className}`}/*Classes do TailWind*/>
-        <Titulo>Filmes em Alta</Titulo>
-        <div className='flex'>
-          <SecaoFilmes filmes={filmes} />
-        </div>
-        <Titulo>Séries em Alta</Titulo>
+    <> 
+      <Header />
+      <div>
+        <img className="h-72 brightness-50 object-cover w-screen" src="https://www.themoviedb.org/t/p/original/cSWkX0fTjrBCU2sbEmyRFd1SxPA.jpg" />
+      </div>
+      
+      <main className="flex min-h-screen flex-col px-24">
+        <Titulo>Filmes em alta</Titulo>
+
+        <SecaoFilmes filmes={filmes} />
+
+        <Titulo>Melhores dramas</Titulo>
+        <Titulo>Séries em alta</Titulo>
         <Titulo>Lançamentos</Titulo>
-        <Titulo>Melhores do Mês</Titulo>
-      </main> //JSX Parece HTML mas não é
+
+
+      </main> //JSX
     </>
+
   )
 }
